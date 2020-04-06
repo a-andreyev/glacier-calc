@@ -41,6 +41,7 @@
  ****************************************************************************/ 
 
 import QtQuick 2.6
+import QtQuick.Window 2.6
 
 import QtQuick.Controls 1.0
 import QtQuick.Controls.Nemo 1.0
@@ -159,7 +160,7 @@ ApplicationWindow {
             states: [
                 State {
                     name: "portait"
-                    when: screen.currentOrientation == Screen.Portrait
+                    when: Screen.orientation === Qt.PortraitOrientation
                     PropertyChanges {
                         target: history
                         visible: false
@@ -171,7 +172,7 @@ ApplicationWindow {
                 },
                 State {
                     name: "landscape"
-                    when: screen.currentOrientation == Screen.Landscape
+                    when: Screen.orientation === Qt.LandscapeOrientation
                     PropertyChanges {
                         target: history
                         visible: true
